@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="3" failures="0" skipped="2" tests="5" time="0.215" timestamp="2024-10-02T15:12:31.331362+05:30" hostname="DESKTOP-LP7BS35"><testcase classname="Dependent.Test_dependency.Test_dependency" name="test_testcase1" time="0.001"><error message="failed on setup with &quot;NameError: name 'driver' is not defined&quot;">request = &lt;SubRequest 'setup_and_teardown' for &lt;Function test_testcase1&gt;&gt;
+
+    @pytest.fixture(autouse=True)
+    def setup_and_teardown(request):
+        browser = request.config.getoption("--browser")
+        global driver
+        # if request.param == "chrome":
+        #     driver = webdriver.Chrome()
+        # elif request.param == "edge":
+        #     driver = webdriver.Edge()
+        if browser == "chrome":
+            driver = webdriver.Chrome()
+        elif browser == "edge":
+            driver = webdriver.Edge()
+&gt;       driver.maximize_window()
+E       NameError: name 'driver' is not defined
+
+conftest.py:17: NameError</error></testcase><testcase classname="Dependent.Test_dependency.Test_dependency" name="test_testcase2" time="0.001"><skipped type="pytest.skip" message="test_testcase2 depends on Test_dependency::test_testcase1">C:\Users\devya\PycharmProjects\pythonProjectdemopytest\.venv\Lib\site-packages\pytest_dependency.py:101: test_testcase2 depends on Test_dependency::test_testcase1</skipped></testcase><testcase classname="Dependent.Test_dependency.Test_dependency" name="test_add_product_to_cart" time="0.001"><error message="failed on setup with &quot;NameError: name 'driver' is not defined&quot;">request = &lt;SubRequest 'setup_and_teardown' for &lt;Function test_add_product_to_cart&gt;&gt;
+
+    @pytest.fixture(autouse=True)
+    def setup_and_teardown(request):
+        browser = request.config.getoption("--browser")
+        global driver
+        # if request.param == "chrome":
+        #     driver = webdriver.Chrome()
+        # elif request.param == "edge":
+        #     driver = webdriver.Edge()
+        if browser == "chrome":
+            driver = webdriver.Chrome()
+        elif browser == "edge":
+            driver = webdriver.Edge()
+&gt;       driver.maximize_window()
+E       NameError: name 'driver' is not defined
+
+conftest.py:17: NameError</error></testcase><testcase classname="Dependent.Test_dependency.Test_BuyProduct" name="test_buy_product" time="0.001"><skipped type="pytest.skip" message="test_buy_product depends on Test_dependency::test_add_product_to_cart">C:\Users\devya\PycharmProjects\pythonProjectdemopytest\.venv\Lib\site-packages\pytest_dependency.py:101: test_buy_product depends on Test_dependency::test_add_product_to_cart</skipped></testcase><testcase classname="testcases.test_samletest.Test_login" name="test_logintest" time="0.004"><error message="failed on setup with &quot;NameError: name 'driver' is not defined&quot;">request = &lt;SubRequest 'setup_and_teardown' for &lt;Function test_logintest&gt;&gt;
+
+    @pytest.fixture(autouse=True)
+    def setup_and_teardown(request):
+        browser = request.config.getoption("--browser")
+        global driver
+        # if request.param == "chrome":
+        #     driver = webdriver.Chrome()
+        # elif request.param == "edge":
+        #     driver = webdriver.Edge()
+        if browser == "chrome":
+            driver = webdriver.Chrome()
+        elif browser == "edge":
+            driver = webdriver.Edge()
+&gt;       driver.maximize_window()
+E       NameError: name 'driver' is not defined
+
+conftest.py:17: NameError</error></testcase></testsuite></testsuites>
